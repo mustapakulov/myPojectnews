@@ -1,0 +1,19 @@
+.formContol {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  .formContol-input {
+    display: table-caption;
+    align-items: center;
+    margin: auto;
+    background-color: aqua;
+    input {
+      margin: 20px 0;
+    }
+  }
+}
+
+// Login page
+.authPage {
+  text-align: center;
+}

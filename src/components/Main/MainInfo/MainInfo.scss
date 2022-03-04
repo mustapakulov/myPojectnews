@@ -1,0 +1,12 @@
+@import "../../../Style.scss";
+.MainInfo {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffff;
+  .MainInfo-title {
+    .MainInfo-subtitle {
+      color: $title-color;
+      font-size: 14px;
+    }
+  }
+}
