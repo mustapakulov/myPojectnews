@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { newsContext } from "../../Context/ContextMy";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { Button, TextField } from "@mui/material";
+import { newsContext } from "../../Context/ContextMy";
 
 const AddNews = () => {
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ const AddNews = () => {
     header: "",
   });
   const { addNews } = useContext(newsContext);
-  console.log(addNews,"news")
-  debugger;
+  console.log(addNews, "news");
+
   const handleInp = (event) => {
     let obj = {
       ...value,
@@ -76,7 +76,7 @@ const AddNews = () => {
               >
                 <TextField
                   style={{ padding: "10px" }}
-                  name="Загаловок"
+                  name="header"
                   onChange={handleInp}
                   value={value.header}
                   variant="outlined"
@@ -84,7 +84,7 @@ const AddNews = () => {
                 />
                 <TextField
                   style={{ padding: "10px" }}
-                  name="Фото"
+                  name="photo"
                   onChange={handleInp}
                   value={value.photo}
                   variant="outlined"
@@ -92,7 +92,7 @@ const AddNews = () => {
                 />
                 <TextField
                   style={{ padding: "10px" }}
-                  name="Описание"
+                  name="describetion"
                   onChange={handleInp}
                   value={value.describetion}
                   variant="outlined"
@@ -100,7 +100,7 @@ const AddNews = () => {
                 />
                 <TextField
                   style={{ padding: "10px" }}
-                  name="Ваше имя"
+                  name="name"
                   onChange={handleInp}
                   value={value.name}
                   variant="outlined"

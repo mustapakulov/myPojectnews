@@ -5,18 +5,20 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import App from "./App";
 import "./index.css";
-import "./Firebase"
+import "./Firebase";
 import Navbar from "./components/Nav/Navbar/Navbar";
 import NavbarLower from "./components/Nav/NavbarLower/NavbarLower";
+import ContextMyProvider from "./Context/ContextMy";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-        
-      </Provider>
-    </BrowserRouter>
+    <ContextMyProvider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </ContextMyProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

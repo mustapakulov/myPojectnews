@@ -1,3 +1,18 @@
 {
-  "news": []
+  "news": [
+    {
+      "photo": "eqweqweq",
+      "describetion": "weqweqweqw",
+      "name": "eqweqwe",
+      "header": "qweqwq",
+      "id": 1
+    },
+    {
+      "photo": "https://avatars.mds.yandex.net/i?id=2a0000017f50b805397ac8c1566be0300e8c-1524622-fast-images&n=13",
+      "describetion": "йцукенгорравмсыммьяжт яоши  Т ТшцутмдшИСЖТЦС цйсштйЖЦС",
+      "name": "баха",
+      "header": "россия с украиной",
+      "id": 2
+    }
+  ]
 }

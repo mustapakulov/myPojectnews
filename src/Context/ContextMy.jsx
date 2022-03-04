@@ -1,11 +1,13 @@
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import { auth } from "../Firebase";
+import { onAuthStateChanged } from "@firebase/auth";
 import axios from "axios";
-import React, { createContext, useReducer } from "react";
 import { API } from "../Helpers";
 
 export const newsContext = createContext();
 
 const NEWS_STATE = {
-  news: null,
+  news: [],
   edit: null,
   cart: {},
 };
@@ -34,11 +36,13 @@ const ContextMy = (props) => {
 
   //! add news
   const addNews = async (latestNews) => {
+    console.log(latestNews);
     try {
-      let res = await axios.post(API, latestNews);
+      await axios.post(API, latestNews);
       getNews();
-      return res;
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const getNews = async () => {
@@ -50,6 +54,7 @@ const ContextMy = (props) => {
       };
       dispatch(action);
     } catch (error) {
+      console.log(error);
       // ! Error
     }
   };
@@ -68,6 +73,30 @@ const ContextMy = (props) => {
     });
   };
 
+  const addCartNews = (news) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = {
+        news: [],
+      };
+    }
+    let newProduct = {
+      item: news,
+      count: 1,
+    };
+    let filteredCard = cart.tikets.filter((elem) => elem.item.id === news.id);
+    if (filteredCard.length > 0) {
+      cart.news = cart.news.filter((elem) => elem.item.id === news.id);
+    } else {
+      cart.news.push(newProduct);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch({
+      type: "CHANGE_CART_COUNT",
+      payload: cart.news.length,
+    });
+  };
   //!EDIT NEWS
   const editNews = async (id) => {
     try {
@@ -111,6 +140,17 @@ const ContextMy = (props) => {
     });
   };
 
+  const checkNewsInCart = (id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = {
+        news: [],
+      };
+    }
+    let newcart = cart.tikets.filter((elem) => elem.id === id);
+    return newcart.length > 0 ? true : false;
+  };
+
   const deleteFromCart = (id, price) => {
     let items = JSON.parse(localStorage.getItem("news"));
     for (let i = 0; i < items.news.length; i++) {
@@ -129,6 +169,18 @@ const ContextMy = (props) => {
     localStorage.setItem("news", items);
     getNews();
   };
+  function useAuth() {
+    const [currentUser, setCurrentUser] = useState();
+
+    useEffect(() => {
+      const unsub = onAuthStateChanged(auth, (user) => {
+        setCurrentUser(user);
+      });
+      return unsub;
+    }, []);
+    return currentUser;
+  }
+  useAuth();
 
   return (
     <newsContext.Provider
@@ -140,7 +192,13 @@ const ContextMy = (props) => {
         deleteNews,
         deleteFromCart,
         getCartLength,
+        checkNewsInCart,
         getCart,
+        addCartNews,
+        useAuth,
+        cart: state.cart,
+        edit: state.edit,
+        news: state.news,
       }}
     >
       {props.children}
