@@ -14,7 +14,6 @@ const AddNews = () => {
     header: "",
   });
   const { addNews } = useContext(newsContext);
-  console.log(addNews, "news");
 
   const handleInp = (event) => {
     let obj = {

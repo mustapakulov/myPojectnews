@@ -33,7 +33,7 @@ const reducer = (state = NEWS_STATE, action) => {
 
 const ContextMy = (props) => {
   const [state, dispatch] = useReducer(reducer, NEWS_STATE);
-
+console.log(props, "12313");
   //! add news
   const addNews = async (latestNews) => {
     console.log(latestNews);
@@ -65,7 +65,7 @@ const ContextMy = (props) => {
         news: [],
       };
     }
-    // console.log(cart, "cartt");
+    console.log(cart, "cartt");
 
     dispatch({
       type: "GET_CART",

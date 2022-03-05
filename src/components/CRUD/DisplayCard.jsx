@@ -18,7 +18,7 @@ export default function DisplayCard({ item }) {
   const [count, setCount] = React.useState(0);
 
   return (
-    <Card sx={{ maxWidth: 1200, minWidth: 300, margin: 2 }}>
+    <Card sx={{ maxWidth: 600, minWidth: 300, margin: 2 }}>
       <CardMedia
         component="img"
         height="auto"
@@ -41,7 +41,7 @@ export default function DisplayCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        {currentUser?.email === "admin@mail.com" ? (
+        {currentUser?.email === "admin@mail.ru" ? (
           <>
             <Link to={`edit/${item.id}`}>
               <Button size="small">Edit</Button>
@@ -61,6 +61,7 @@ export default function DisplayCard({ item }) {
               color={checkNewsInCart(item.id) ? "secondary" : "inherit"}
             >
               <LocalGroceryStoreIcon />
+              <h1>этот</h1>
             </IconButton>
           </>
         )}

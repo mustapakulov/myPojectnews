@@ -108,15 +108,7 @@ export default function Cart() {
               <Typography variant="h5">Total:</Typography>
             </TableCell>
           </TableRow>
-          <TableRow>
-            <TableCell colSpan={3} align="right">
-              <Link to="/credit">
-                <Button variant="contained" color="primary">
-                  BUY
-                </Button>
-              </Link>
-            </TableCell>
-          </TableRow>
+          <TableRow></TableRow>
         </TableBody>
       </Table>
     </TableContainer>

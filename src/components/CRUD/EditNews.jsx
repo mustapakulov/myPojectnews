@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { Button, TextField } from "@mui/material";
 import { newsContext } from "../../Context/ContextMy";
-import { useEffect } from "react";
 
 const EditNews = () => {
+  const navigate = useNavigate();
   const { edit, editNews, saveEditNews } = useContext(newsContext);
   const { id } = useParams();
 
@@ -36,6 +37,7 @@ const EditNews = () => {
   };
   const handleSave = () => {
     saveEditNews({ ...value });
+    navigate("/");
   };
   return (
     <div>
@@ -55,7 +57,7 @@ const EditNews = () => {
       >
         <Paper elevation={3}>
           <h1 style={{ textAlign: "center", color: "black", padding: "40px" }}>
-           Редактирование
+            Редактирование
           </h1>
           <div
             style={{
@@ -118,7 +120,7 @@ const EditNews = () => {
                 />
               </form>
               <Button onClick={handleSave} variant="contained" color="success">
-                редактирование{" "}
+                Редактирование{" "}
               </Button>
             </div>
           </div>
