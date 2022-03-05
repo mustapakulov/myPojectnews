@@ -10,7 +10,7 @@ const LoginPage = () => {
       <Login />
       <p>
         для{" "}
-        <Link to="/register">
+        <Link to="/register" style={{textDecoration:'none'}}>
           <Button variant="contained" color="success">
             Регистрация
           </Button>

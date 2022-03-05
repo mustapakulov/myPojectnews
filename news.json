@@ -1,18 +1,39 @@
 {
   "news": [
     {
-      "photo": "https://avatars.mds.yandex.net/i?id=04eb918b184f06fecbf016f38d7b278f-5666076-images-thumbs&n=13",
-      "describetion": "asdasdwqwdqwcqwcq",
-      "name": "vwqvqwvqwv",
-      "header": "as as as s sdvascqwcqwcwqcqwc",
+      "photo": "https://avatars.mds.yandex.net/i?id=2a0000017f50a757c1a7fa50a6b466f23da2-1344262-fast-images&n=13",
+      "describetion": "К северо-западу от Киева продолжаются бои в районе стратегического треугольника Ирпень — Гостомель — Буча. Источник: https://rusvesna.su/news/1646458371",
+      "name": "Тима",
+      "header": "Россия с Украиной ",
       "id": 1
     },
     {
-      "photo": "https://avatars.mds.yandex.net/i?id=04eb918b184f06fecbf016f38d7b278f-5666076-images-thumbs&n=13",
-      "describetion": "wqvqwvwqvqwv",
-      "name": "qwcwqqwcqwcwqc",
-      "header": "qvqwvqwvqwv",
+      "photo": "https://avatars.mds.yandex.net/i?id=41e6c50597f7d94f9c776fee3979cd00-5904855-images-thumbs&n=13",
+      "describetion": "Текущие обменные курсы валюты в коммерческих банках Бишкека и обменных бюро Моссовета по отношению к кыргызскому сому на 17:28, 5 марта 2022 года.",
+      "name": "Бека",
+      "header": "Курс растет",
       "id": 2
+    },
+    {
+      "photo": "https://24.kg/thumbnails/e9cb4/57598/251364_w_h500_1646392860_r.jpeg",
+      "describetion": "На остановке на улице Токтогула, 93 корни деревьев закатали в асфальт. ",
+      "name": "",
+      "header": "В Токтогул",
+      "id": 3
+    },
+    {
+      "photo": "https://st-0.akipress.org/st_gallery/41/1320241.de00336ac9e6010d2717d20fb89edb44.jpg",
+      "describetion": "Учащиеся школы №87 в Бишкеке станцевали кыргызский танец в честь Дня флага.",
+      "name": "Талгат",
+      "header": "Бишкеке",
+      "id": 4
+    },
+    {
+      "photo": "https://st-0.akipress.org/st_gallery/50/1319850.3e7541a607c9cc111ebcfb53ef81b94d.jpg",
+      "describetion": "Глава Кабмина Кыргызстана А.Жапаров провел телефонный разговор с главой правительства России М.Мишустиным",
+      "name": "",
+      "header": "Кыргызстан",
+      "id": 5
     }
   ]
 }

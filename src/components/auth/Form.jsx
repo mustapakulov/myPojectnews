@@ -51,8 +51,7 @@ const Form = ({ title, handleClick }) => {
               <>
                 <Grid container justifyContent="flex-end" sx={{ mt: 2 }}>
                   {" "}
-                  {/* <p className="labelRegister"> У вас есть аккаунт? </p> */}
-                  <Link to="/register">
+                  <Link to="/register" style={{ textDecoration: "none" }}>
                     <Button
                       onClick={() => handleClick(email, pass)}
                       variant="contained"

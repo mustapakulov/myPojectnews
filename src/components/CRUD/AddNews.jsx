@@ -37,14 +37,14 @@ const AddNews = () => {
             maxWidth: "auto",
             height: "auto",
             p: "10px",
-            backgroundImage: `url(${"https://images.izi.ua/12685727"})`,
+            background: "linear-gradient(90deg, rgba(13,26,168,0.9472163865546218) 3%, rgba(90,5,160,1) 43%, rgba(7,68,207,1) 100%)",
             backgroundSize: "cover",
           },
         }}
       >
         <Paper elevation={3}>
           <h1 style={{ textAlign: "center", color: "black", padding: "40px" }}>
-            Add product
+            Добавить новость
           </h1>
           <div
             style={{
@@ -79,7 +79,7 @@ const AddNews = () => {
                   onChange={handleInp}
                   value={value.header}
                   variant="outlined"
-                  label="Header"
+                  label="Загаловок"
                 />
                 <TextField
                   style={{ padding: "10px" }}
@@ -87,7 +87,7 @@ const AddNews = () => {
                   onChange={handleInp}
                   value={value.photo}
                   variant="outlined"
-                  label="Src"
+                  label="Фото"
                 />
                 <TextField
                   style={{ padding: "10px" }}
@@ -95,7 +95,7 @@ const AddNews = () => {
                   onChange={handleInp}
                   value={value.describetion}
                   variant="outlined"
-                  label="Describetion"
+                  label="Описание"
                 />
                 <TextField
                   style={{ padding: "10px" }}
@@ -103,11 +103,11 @@ const AddNews = () => {
                   onChange={handleInp}
                   value={value.name}
                   variant="outlined"
-                  label="Name"
+                  label="Ваше имя"
                 />
               </form>
               <Button onClick={handleSave} variant="contained" color="success">
-                Add{" "}
+                Сохранить{" "}
               </Button>
             </div>
           </div>

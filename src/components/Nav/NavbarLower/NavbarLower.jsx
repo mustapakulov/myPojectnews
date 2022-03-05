@@ -1,49 +1,34 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import "./NavbarLower.css";
 import telephone from "../../../img/telephone.png";
-import { useDispatch } from "react-redux";
 import { useAuth } from "../../../hooks/use-auth";
 import { removeUser } from "../../../store/slices/userSlice";
-
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
-
-const pages = ["Products", "Pricing", "Blog"];
-const setting = ["выйти"];
 
 const NavbarLower = () => {
-  const currentUser = useAuth();
+  const dispatch = useDispatch();
+  const { isAuth, email } = useAuth();
+  const logAith = () => dispatch(removeUser());
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
+    dispatch(removeUser());
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const dispatch = useDispatch();
-  const { isAuth, email } = useAuth();
   return (
     <div className="NavbarLower-bottom">
       <div className="NavbarLower ">
@@ -70,16 +55,6 @@ const NavbarLower = () => {
           <div>
             <Toolbar disableGutters>
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleOpenNavMenu}
-                  color="inherit"
-                >
-                  <MenuIcon />
-                </IconButton>
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorElNav}
@@ -97,78 +72,30 @@ const NavbarLower = () => {
                   sx={{
                     display: { xs: "block", md: "none" },
                   }}
-                >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-
-                {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
-                  >
-                    {page}
-                  </Button>
-                ))}
+                ></Menu>
               </Box>
-
               <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="/static/images/avatar/2.jpg"
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {setting.map((setting) => (
-                    <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-                <Typography
-                  style={{ color: "black" }}
-                  variant="h6"
-                  component="div"
-                >
-                  {removeUser?.email.substring(0, removeUser.email.length - 10)}
-                  {removeUser ? (
-                    <Link to="/login">
-                      <AccountCircleIcon
-                        sx={{ color: "text.secondary" }}
-                        fontSize="large"
+                <Tooltip title="Выйти с аккаунта">
+                  {isAuth ? (
+                    <IconButton onClick={logAith()} sx={{ p: 0 }}>
+                      {email}
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="/static/images/avatar/2.jpg"
                       />
-                    </Link>
+                    </IconButton>
                   ) : (
-                    <Link to="/login">
-                      <AccountCircleIcon
-                        sx={{ color: "text.secondary" }}
-                        fontSize="large"
-                      />
+                    <Link to="/register" style={{ textDecoration: "none" }}>
+                      <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                        {email}
+                        <Avatar
+                          alt="Remy Sharp"
+                          src="/static/images/avatar/2.jpg"
+                        />
+                      </IconButton>
                     </Link>
                   )}
-                </Typography>
+                </Tooltip>
               </Box>
             </Toolbar>
           </div>

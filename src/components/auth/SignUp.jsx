@@ -26,11 +26,7 @@ const SignUp = () => {
   };
   return (
     <div>
-    <Form
-            title="Регистрация"
-            handleClick={handleRegister}
-        />
-      {/* <button onClick={handleRegister}>Регистрация</button> */}
+      <Form title="Регистрация" handleClick={handleRegister} />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { SignUp } from "../components/auth/SignUp";
 import { Button } from "@mui/material";
 
-
 const Register = () => {
   return (
     <div className="authPage">
@@ -10,7 +9,7 @@ const Register = () => {
       <SignUp />
       <p>
         Если у вас есть аккаунт{" "}
-        <Link to="/login">
+        <Link to="/login" style={{ textDecoration: "none" }}>
           <Button variant="contained" color="success">
             Вход в акаунт
           </Button>

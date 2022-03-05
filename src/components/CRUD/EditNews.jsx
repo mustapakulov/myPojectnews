@@ -50,7 +50,7 @@ const EditNews = () => {
             maxWidth: "auto",
             height: "auto",
             p: "10px",
-            backgroundImage: `url(${"https://cdn-st1.rtr-vesti.ru/vh/pictures/hd/304/573/2.jpg"})`,
+            background: `linear-gradient(90deg, rgba(13,26,168,0.9472163865546218) 3%, rgba(90,5,160,1) 43%, rgba(7,68,207,1) 100%)`,
             backgroundSize: "cover",
           },
         }}
