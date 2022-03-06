@@ -3,9 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
-    //   border: 1px  #676767;
-
+    margin: 10px;
     .NavbarLower-navigate {
       .button {
         border: none;
@@ -22,6 +20,24 @@
         span {
           font-size: 18px;
           color: #6c69ff;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 426px) {
+  .NavbarLower-bottom {
+    .NavbarLower {
+      display: block;
+      .NavbarLower_phone {
+        display: flex;
+        .NavbarLover_mobile_block {
+          display: flex;
+        }
+      }
+      .NavbarLower-logo {
+        .logo {
+          font-size: 30px;
         }
       }
     }

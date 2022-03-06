@@ -8,7 +8,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5px 0;
+  margin: 10px;
 }
 
 .NavbarLower-bottom .NavbarLower .NavbarLower-navigate .button {
@@ -27,5 +27,24 @@
 .NavbarLower-bottom .NavbarLower .NavbarLower-logo .logo span {
   font-size: 18px;
   color: #6c69ff;
+}
+
+@media screen and (max-width: 426px) {
+  .NavbarLower-bottom .NavbarLower {
+    display: block;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower_phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower_phone .NavbarLover_mobile_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower-logo .logo {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=NavbarLower.css.map */

@@ -44,61 +44,30 @@ const NavbarLower = () => {
           </button>
           <button className="button NavbarLower-navigate-">Контакты</button>
         </div>
-        <div className="NavbarLower">
-          <img src={telephone} alt="Звонок" />
-          <div className="">
-            <p>+996 777 777 777</p>
-            <p>Заказать звонок</p>
+
+        <div className="NavbarLower NavbarLower_phone">
+          <div className="NavbarLower NavbarLover_mobile_block">
+            <img src={telephone} alt="Звонок" />
+            <div className="NavbarLover_title">
+              <p>+996 777 777 777</p>
+              <p>Заказать звонок</p>
+            </div>
           </div>
-        </div>
-        <div className="NavbarLower">
-          <div>
-            <Toolbar disableGutters>
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorElNav}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
-                  open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
-                  sx={{
-                    display: { xs: "block", md: "none" },
-                  }}
-                ></Menu>
-              </Box>
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Выйти с аккаунта">
-                  {isAuth ? (
-                    <IconButton onClick={logAith()} sx={{ p: 0 }}>
-                      {email}
-                      <Avatar
-                        alt="Remy Sharp"
-                        src="/static/images/avatar/2.jpg"
-                      />
-                    </IconButton>
-                  ) : (
-                    <Link to="/register" style={{ textDecoration: "none" }}>
-                      <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        {email}
-                        <Avatar
-                          alt="Remy Sharp"
-                          src="/static/images/avatar/2.jpg"
-                        />
-                      </IconButton>
-                    </Link>
-                  )}
-                </Tooltip>
-              </Box>
-            </Toolbar>
-          </div>
+          <Tooltip title="Аккаунт">
+            {isAuth ? (
+              <IconButton onClick={logAith()} sx={{ p: 0 }}>
+                {email}
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            ) : (
+              <Link to="/register" style={{ textDecoration: "none" }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  {email}
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Link>
+            )}
+          </Tooltip>
         </div>
       </div>
     </div>

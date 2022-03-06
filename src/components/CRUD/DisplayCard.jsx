@@ -15,7 +15,7 @@ export default function DisplayCard({ item }) {
   const [count, setCount] = React.useState(0);
 
   return (
-    <Card sx={{ maxWidth: 600, minWidth: 300, margin: 2 }}>
+    <Card sx={{ width: 1400, minWidth: 300, margin: 2 }}>
       <CardMedia
         component="img"
         height="auto"
