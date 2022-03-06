@@ -1,12 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import AddIcon from "@mui/icons-material/Add";
 import Group from "../../../img/Group.png";
 import email from "../../../img/email.png";
 import { newsContext } from "../../../Context/ContextMy";
 import "../../style/style.css";
-
-import "./navbar.css";
-import { Link } from "react-router-dom";
-import AddIcon from "@mui/icons-material/Add";
 
 const Navbar = () => {
   const { useAuth } = React.useContext(newsContext);
@@ -27,10 +25,9 @@ const Navbar = () => {
               style={{
                 textDecoration: "none",
                 alignItems: "center",
-                display:'flex',
-                color:'#676767'
+                display: "flex",
+                color: "#676767",
               }}
-              
             >
               <AddIcon />
               <h3>Добавить новость</h3>

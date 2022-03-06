@@ -1,20 +1,68 @@
-.formContol {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.navbar {
+  background-color: #eff0f1;
 }
 
-.formContol .formContol-input {
-  display: table-caption;
+.navbar .navbar-navigate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
-  background-color: aqua;
 }
 
-.formContol .formContol-input input {
-  margin: 20px 0;
+.NavbarLower-bottom .NavbarLower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.NavbarLower-bottom .NavbarLower .NavbarLower-navigate .button {
+  border: none;
+  margin: 5px;
+  font-size: 18px;
+  font-family: Montserrat;
+  color: #676767;
+}
+
+.NavbarLower-bottom .NavbarLower .NavbarLower-logo .logo {
+  font-size: 50px;
+  margin: 0 8%;
+}
+
+.NavbarLower-bottom .NavbarLower .NavbarLower-logo .logo span {
+  font-size: 18px;
+  color: #6c69ff;
+}
+
+@media screen and (max-width: 426px) {
+  .NavbarLower-bottom .NavbarLower {
+    display: block;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower_phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower_phone .NavbarLover_mobile_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NavbarLower-bottom .NavbarLower .NavbarLower-logo .logo {
+    font-size: 30px;
+  }
 }
 
 .authPage {
